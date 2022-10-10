@@ -2,6 +2,7 @@ import './App.css';
 import ImageSlider from './ImageSlider';
 
 import zema1 from './assets/IMG_9742.JPG';
+import zema2 from './assets/IMG_9743.JPG';
 
 function App() {
   const slides = [
@@ -10,6 +11,7 @@ function App() {
     { url: 'http://localhost:3000/z3.JPG', title: 'z3' },
     { url: 'http://localhost:3000/z4.JPG', title: 'z4' },
     { url: 'http://localhost:3000/z5.JPG', title: 'z5' },
+    { url: zema2, title: 'z6' },
   ];
   const containerStyles = {
     width: '500px',
@@ -18,7 +20,7 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Hello monsterlessons</h1>
+      <h1 style={{ textAlign: 'center' }}>Hello monsterlessons</h1>
       <div style={containerStyles}>
         <ImageSlider slides={slides} />
       </div>
