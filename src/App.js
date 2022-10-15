@@ -17,12 +17,14 @@ function App() {
     width: '500px',
     height: '280px',
     margin: '0 auto',
+    overflow: 'hidden',
   };
+
   return (
     <div className="App">
       <h1 style={{ textAlign: 'center' }}>Hello monsterlessons</h1>
       <div style={containerStyles}>
-        <ImageSlider slides={slides} />
+        <ImageSlider slides={slides} style={{ display: 'inline-block' }} />
       </div>
     </div>
   );

@@ -1,7 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const ImageSlider = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentIndex((currentIndex) =>
+        currentIndex < slides.length - 1 ? currentIndex + 1 : 0
+      );
+    }, 3000);
+    return () => clearInterval(slideInterval);
+  }, []);
 
   const sliderStyles = {
     height: '100%',
@@ -14,6 +23,7 @@ const ImageSlider = ({ slides }) => {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundImage: `url(${slides[currentIndex].url})`,
+    transition: 'ease 2s',
   };
   const leftArrowStyles = {
     position: 'absolute',
